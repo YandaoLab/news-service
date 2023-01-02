@@ -11,7 +11,7 @@ let BILIAPI = "https://news.ydlk.cc/bili"
 //半月谈API
 let BANYUEAPI = "https://news.ydlk.cc/banyue"
 //博客API
-let BLOGUEAPI = "https://news.ydlk.cc/blog"
+let BLOGAPI = "https://news.ydlk.cc/blog"
 
 //js入口
 get_day_news(offset);
