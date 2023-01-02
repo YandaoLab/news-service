@@ -106,7 +106,7 @@ async def bili():
     '''
     My Bolg - RSS
     '''
-    res=banyue_api.get_topic()
+    res=blog_api.get_topic()
     if res!=None:
         return FlowResponse.success(data=res)
     else:
