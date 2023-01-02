@@ -1,13 +1,13 @@
 //时间位移，0表示今天，1表示昨天，以此类推
 let offset = 0
 //获取新闻API，可根据部署域名更换
-let NEWS_API = "https://news.panghai.top/60s"
+let NEWS_API = "https://news.ydlk.cc/60s"
 //壁纸API
-let BINGAPI = "https://news.panghai.top/bing"
+let BINGAPI = "https://news.ydlk.cc/bing"
 //微博热搜API
-let WEIBOAPI = "https://news.panghai.top/weibo"
+let WEIBOAPI = "https://news.ydlk.cc/weibo"
 //B站热搜API
-let BILIAPI = "https://news.panghai.top/bili"
+let BILIAPI = "https://news.ydlk.cc/bili"
 
 //js入口
 get_day_news(offset);

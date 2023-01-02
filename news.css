@@ -1,19 +1,21 @@
+@import url('https://fonts.loli.net/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap');
+
 html {
   overflow-x: initial !important;
 }
 :root {
-  --bg-color: #ffffff;
-  --text-color: #333333;
+  --bg-color: #F9F9F9;
+  --text-color: #5E5E5E;
   --select-text-bg-color: #b5d6fc;
   --select-text-font-color: auto;
-  --monospace: "Lucida Console", Consolas, "Courier", monospace;
+  --monospace: "Noto Serif SC", "PingFang SC", "Lucida Console", Consolas, "Courier", monospace;
   --title-bar-height: 20px;
 }
 html {
   font-size: 14px;
   background-color: var(--bg-color);
   color: var(--text-color);
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Noto Serif SC", "PingFang SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 body {
@@ -722,7 +724,7 @@ b {
 }
 
 h1{
-  font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei,
+  font-family: "Noto Serif SC", PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei,
     Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
   font-weight: 100;
   line-height: 1.35;
@@ -979,7 +981,7 @@ b {
 }
 
 h1{
-  font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei,
+  font-family: "Noto Serif SC", PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei,
     Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
   font-weight: 100;
   line-height: 1.35;
@@ -1545,15 +1547,15 @@ sup.md-footnote {
   --ul-font-jp: var(--font-song-jp);
   --font-quota-cn: var(--font-kai-cn);
   --font-quota-jp: var(--font-kai-jp);
-  --font-hei-cn: "Poppins", "Noto Sans CJK SC", sans-serif;
-  --font-hei-jp: "Poppins", "Noto Sans CJK JP", sans-serif;
-  --font-song-cn: "方正仿宋_GBK", , serif;
-  --font-song-jp: "Sabon Next LT Pro", "Yu Mincho", serif;
-  --font-kai-cn: "HarmonyOS_Regular", "TW-Kai", serif;
-  --font-kai-jp: "HarmonyOS_Regular", "EPSON 教科書体Ｍ", "TW-Kai", "kaiti",
+  --font-hei-cn: "Noto Serif SC", "Poppins", "Noto Sans CJK SC", sans-serif;
+  --font-hei-jp: "Noto Serif SC", "Poppins", "Noto Sans CJK JP", sans-serif;
+  --font-song-cn: "Noto Serif SC", "方正仿宋_GBK", , serif;
+  --font-song-jp: "Noto Serif SC", "Sabon Next LT Pro", "Yu Mincho", serif;
+  --font-kai-cn: "Noto Serif SC", "HarmonyOS_Regular", "TW-Kai", serif;
+  --font-kai-jp: "Noto Serif SC", "HarmonyOS_Regular", "EPSON 教科書体Ｍ", "TW-Kai", "kaiti",
     serif;
-  --font-mono: "Ubuntu", "975 朦胧黑体", sans-serif;
-  --font-fangsong: "Courier New", "方正仿宋_GBK", "仿宋";
+  --font-mono: "Noto Serif SC", "Ubuntu", "975 朦胧黑体", sans-serif;
+  --font-fangsong: "Noto Serif SC", "Courier New", "方正仿宋_GBK", "仿宋";
   --bookmark: url("data:image/svg+xml;utf8,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3Ahttps://www.w3.org/2000/svg%22%3E%0A%3Cpath%20d%3D%22M4%204.5C4%203.11929%205.11929%202%206.5%202H13.5C14.8807%202%2016%203.11929%2016%204.5V17.5C16%2017.6881%2015.8945%2017.8602%2015.7269%2017.9456C15.5593%2018.0309%2015.358%2018.015%2015.2059%2017.9044L10%2014.1183L4.79409%2017.9044C4.64199%2018.015%204.4407%2018.0309%204.27311%2017.9456C4.10553%2017.8602%204%2017.6881%204%2017.5V4.5Z%22%20fill%3D%22%23311b92%22/%3E%0A%3C/svg%3E%0A");
   --light-bulb: url("data:image/svg+xml;utf8,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3Ahttps://www.w3.org/2000/svg%22%3E%0A%3Cpath%20d%3D%22M13.073%2015L12.6891%2016.6051C12.5048%2017.3763%2011.8236%2017.935%2011.0181%2017.9947L10.8748%2018H9.12546C8.30655%2018%207.59%2017.4839%207.34866%2016.7385L7.31108%2016.6047L6.928%2015H13.073Z%22%20fill%3D%22%23b0791b%22/%3E%0A%3Cpath%20d%3D%22M10%202C13.3137%202%2016%204.59693%2016%207.80041C16%209.47737%2015.2546%2011.0164%2013.7961%2012.3942C13.7324%2012.4544%2013.6831%2012.5269%2013.6512%2012.6065L13.6251%2012.6883L13.311%2014H10.5002V9.49707C10.5002%209.22093%2010.2764%208.99707%2010.0002%208.99707C9.7241%208.99707%209.50024%209.22093%209.50024%209.49707V14H6.689L6.37626%2012.6886C6.34955%2012.5766%206.29016%2012.4745%206.20516%2012.3942C4.8153%2011.0819%204.07265%209.62354%204.00507%208.03903L4%207.80041L4.00321%207.60894C4.1077%204.49409%206.75257%202%2010%202ZM9.5%206.50238V7.50391C9.5%207.78005%209.72386%208.00391%2010%208.00391C10.2761%208.00391%2010.5%207.78005%2010.5%207.50391V6.50238C10.5%206.22624%2010.2761%206.00238%2010%206.00238C9.72386%206.00238%209.5%206.22624%209.5%206.50238ZM12.8506%207.44332C12.6553%207.24806%2012.3388%207.24806%2012.1435%207.44332L11.4353%208.15151C11.2401%208.34677%2011.2401%208.66335%2011.4353%208.85861C11.6306%209.05388%2011.9472%209.05388%2012.1424%208.85861L12.8506%208.15043C13.0459%207.95517%2013.0459%207.63858%2012.8506%207.44332ZM7.8521%207.44332C7.65684%207.24806%207.34026%207.24806%207.145%207.44332C6.94973%207.63858%206.94973%207.95517%207.145%208.15043L7.85318%208.85861C8.04844%209.05388%208.36503%209.05388%208.56029%208.85861C8.75555%208.66335%208.75555%208.34677%208.56029%208.15151L7.8521%207.44332Z%22%20fill%3D%22%23b0791b%22/%3E%0A%3C/svg%3E%0A");
   --star: url("data:image/svg+xml;utf8,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3Ahttps://www.w3.org/2000/svg%22%3E%0A%3Cpath%20d%3D%22M9.10433%202.89874C9.47114%202.15549%2010.531%202.1555%2010.8978%202.89874L12.8282%206.81024L17.1448%207.43748C17.9651%207.55666%2018.2926%208.56464%2017.699%209.14317L14.5755%2012.1878L15.3129%2016.487C15.453%2017.3039%2014.5956%2017.9269%2013.8619%2017.5412L10.0011%2015.5114L6.14018%2017.5412C5.40655%2017.9269%204.54913%2017.3039%204.68924%2016.487L5.4266%2012.1878L2.30308%209.14317C1.70956%208.56463%202.03708%207.55666%202.8573%207.43748L7.17389%206.81024L9.10433%202.89874Z%22%20fill%3D%22%23044289%22/%3E%0A%3C/svg%3E%0A");
@@ -1691,7 +1693,7 @@ ul li {
 }
 
 ul li::marker {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Noto Serif SC", Arial, Helvetica, sans-serif;
   font-size: 14pt;
 }
 
@@ -2071,7 +2073,7 @@ table tr:hover {
   color: #000000;
   cursor: pointer;
   display: inline-block;
-  font-family: "HarmonyOS_Regular", Helvetica, sans-serif;
+  font-family: "Noto Serif SC", "HarmonyOS_Regular", Helvetica, sans-serif;
   font-size: 15px;
   width: 100%;
   font-weight: 500;
