@@ -24,6 +24,7 @@ from bili_api import bili_api
 from sixty_api import sixty_api
 from bing_api import bing_api
 from banyue_api import banyue_api
+from blog_api import blog_api
 from api import FlowResponse
 
 VERSION="2.0.0"
@@ -93,6 +94,17 @@ async def bili():
 async def bili():
     '''
     半月谈RSS
+    '''
+    res=banyue_api.get_topic()
+    if res!=None:
+        return FlowResponse.success(data=res)
+    else:
+        return FlowResponse.error('系统发生错误')
+
+@app.get("/blog",tags=["Blog RSS"], summary="获取博客RSS数据")
+async def bili():
+    '''
+    My Bolg - RSS
     '''
     res=banyue_api.get_topic()
     if res!=None:
