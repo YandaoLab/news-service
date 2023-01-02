@@ -1,4 +1,4 @@
-# 每日早报
+# 每日早报 自用版 | [点击前往原仓库](https://github.com/flow2000/news)
 
 ![news-service](https://socialify.git.ci/YandaoLab/news-service/image?font=Bitter&language=1&name=1&owner=1&pattern=Circuit%20Board&theme=Auto)
 
