@@ -56,5 +56,17 @@ GET：`https://news.ydlk.cc/bing`，返回必应热搜json数据
 
 ##### 请求参数：无
 
+-----
+
+此版本还提供：
+
+GET：`https://news.ydlk.cc/banyue`，返回半月谈公众号文章json数据
+
+##### 请求参数：无
+
+GET：`https://news.ydlk.cc/blog`，返回我的博客的json数据
+
+##### 请求参数：无
+
 更多详情请点击：[每日早报API](https://news.panghai.top/docs)
 
