@@ -61,7 +61,7 @@ async def index():
         "current_version":VERSION,
         "latest_version":latest_version
     }
-    return FlowResponse.success(msg="news部署成功，查看接口文档：https://news.panghai.top/docs",data=data)
+    return FlowResponse.success(msg="news部署成功，查看接口文档：https://news.ydlk.cc/docs",data=data)
 
 async def fetch(session, url):
     async with session.get(url, verify_ssl=False) as response:

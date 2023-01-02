@@ -12,7 +12,7 @@ headers={
 def get_topic():
     try:
         dataList=[]
-        data=requests.get(API,headers=headers,timeout=8)
+        data=requests.get(API,headers=headers,timeout=100)
         data=json.loads(data.text)
         data_json=data['data']['list']
         for i in range(0,len(data_json)):
