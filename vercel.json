@@ -23,6 +23,10 @@
             "dest": "api/main.py"
         },
         {
+            "src": "/banyue",
+            "dest": "api/main.py"
+        },
+        {
             "src": "/docs",
             "dest": "api/main.py"
         },

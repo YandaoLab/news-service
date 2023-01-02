@@ -221,7 +221,7 @@ function change_origin() {
             })
             .catch(function (error) {
                 Notiflix.Notify.failure(`半月谈RSS获取失败\uD83D\uDE1E，请点击跳转至问题反馈`, function () {
-                    window.open("https://github.com/flow2000/news/issues/new")
+                    window.open("https://www.daoblog.top/")
                 });
                 NProgress.done()
                 console.log(error);
