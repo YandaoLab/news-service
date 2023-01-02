@@ -8,7 +8,7 @@
 
 ### 效果
 
-立即访问：[news.ydlk.cc (v2)](https://news.yudlk.cc/)
+立即访问：[news.ydlk.cc (v2)](https://news.ydlk.cc/)
 
 #### Vercel 一键部署（**推荐**）
 
