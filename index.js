@@ -91,7 +91,7 @@ function load_day_news(data) {
                 } else if (n[2] === '、') {
                     n = n.substring(3);
                 }
-                if (btn_text !== '切换至微博热搜') {
+                if (btn_text !== '切换至半月谈') {
                     li.innerHTML = `<a href=${data['urls'][i]} target='_blank'>${n}</a>`;
                 } else {
                     li.innerHTML = n;
@@ -139,7 +139,37 @@ function before() {
 function change_origin() {
     current_time = localStorage.getItem("current_time")
     btn_text = document.getElementsByClassName("switch_btn")[0].innerText
-    if (btn_text === '切换至微博热搜') {
+    if (btn_text === '切换至半月谈') {
+    axios.get(BANYUEAPI)
+        .then(function (response) {
+            var data = response.data
+            var news_data = {}
+            var news_title = []
+            var news_url = []
+            for (let i = 0; i < data['data'].length; i++) {
+                news_title.push(data['data'][i].title)
+                news_url.push(data['data'][i].url)
+            }
+            news_data['news'] = news_title
+            news_data['urls'] = news_url
+            news_data['time'] = current_time
+            news_data['topic'] = '半月谈订阅'
+            news_data['weiyu'] = ''
+            data['data'] = news_data
+            load_day_news(data)
+        })
+        .catch(function (error) {
+            Notiflix.Notify.failure(`半月谈RSS获取失败\uD83D\uDE1E，请点击跳转至问题反馈`, function () {
+                window.open("https://www.daoblog.top/")
+            });
+            NProgress.done()
+            console.log(error);
+        });
+    document.getElementById("news_title").innerText = '半月谈'
+    document.getElementsByClassName("before_btn")[0].style.display = "none";
+    document.getElementsByClassName("after_btn")[0].style.display = "none";
+    document.getElementsByClassName("switch_btn")[0].innerText = '切换至微博热搜'
+    } else if (btn_text === '切换至微博热搜') {
         NProgress.start();
         axios.get(WEIBOAPI)
             .then(function (response) {
@@ -199,38 +229,8 @@ function change_origin() {
         document.getElementById("news_title").innerText = 'B站热搜'
         document.getElementsByClassName("before_btn")[0].style.display = "none";
         document.getElementsByClassName("after_btn")[0].style.display = "none";
-        document.getElementsByClassName("switch_btn")[0].innerText = '切换至半月谈'
-    } else if (btn_text === '切换至半月谈') {
-        axios.get(BANYUEAPI)
-            .then(function (response) {
-                var data = response.data
-                var news_data = {}
-                var news_title = []
-                var news_url = []
-                for (let i = 0; i < data['data'].length; i++) {
-                    news_title.push(data['data'][i].title)
-                    news_url.push(data['data'][i].url)
-                }
-                news_data['news'] = news_title
-                news_data['urls'] = news_url
-                news_data['time'] = current_time
-                news_data['topic'] = '半月谈订阅'
-                news_data['weiyu'] = ''
-                data['data'] = news_data
-                load_day_news(data)
-            })
-            .catch(function (error) {
-                Notiflix.Notify.failure(`半月谈RSS获取失败\uD83D\uDE1E，请点击跳转至问题反馈`, function () {
-                    window.open("https://www.daoblog.top/")
-                });
-                NProgress.done()
-                console.log(error);
-            });
-        document.getElementById("news_title").innerText = '半月谈'
-        document.getElementsByClassName("before_btn")[0].style.display = "none";
-        document.getElementsByClassName("after_btn")[0].style.display = "none";
-        document.getElementsByClassName("switch_btn")[0].innerText = '切换至每日早报'
-    } else if (btn_text === '切换至每日早报') {
+        document.getElementsByClassName("switch_btn")[0].innerText = '切换回每日早报'
+    } else if (btn_text === '切换回每日早报') {
         location.reload()
     }
 }
