@@ -10,6 +10,8 @@ let WEIBOAPI = "https://news.ydlk.cc/weibo"
 let BILIAPI = "https://news.ydlk.cc/bili"
 //半月谈API
 let BANYUEAPI = "https://news.ydlk.cc/banyue"
+//博客API
+let BLOGUEAPI = "https://news.ydlk.cc/blog"
 
 //js入口
 get_day_news(offset);
@@ -171,7 +173,7 @@ function change_origin() {
     document.getElementsByClassName("switch_btn")[0].innerText = '切换至博客'
 } else if (btn_text === '切换至博客') {
     NProgress.start();
-    axios.get(WEIBOAPI)
+    axios.get(BLOGAPI)
         .then(function (response) {
             var data = response.data
             var news_data = {}
