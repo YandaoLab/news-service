@@ -168,6 +168,37 @@ function change_origin() {
     document.getElementById("news_title").innerText = '半月谈'
     document.getElementsByClassName("before_btn")[0].style.display = "none";
     document.getElementsByClassName("after_btn")[0].style.display = "none";
+    document.getElementsByClassName("switch_btn")[0].innerText = '切换至博客'
+} else if (btn_text === '切换至博客') {
+    NProgress.start();
+    axios.get(WEIBOAPI)
+        .then(function (response) {
+            var data = response.data
+            var news_data = {}
+            var news_title = []
+            var news_url = []
+            for (let i = 0; i < data['data'].length; i++) {
+                news_title.push(data['data'][i].title)
+                news_url.push(data['data'][i].url)
+            }
+            news_data['news'] = news_title
+            news_data['urls'] = news_url
+            news_data['time'] = current_time
+            news_data['topic'] = "Yandao's Blog"
+            news_data['weiyu'] = ''
+            data['data'] = news_data
+            load_day_news(data)
+        })
+        .catch(function (error) {
+            Notiflix.Notify.failure(`个人博客获取失败\uD83D\uDE1E，请点击跳转至问题反馈`, function () {
+                window.open("https://www.daoblog.top/")
+            });
+            NProgress.done()
+            console.log(error);
+        });
+    document.getElementById("news_title").innerText = "Yandao's Blog"
+    document.getElementsByClassName("before_btn")[0].style.display = "none";
+    document.getElementsByClassName("after_btn")[0].style.display = "none";
     document.getElementsByClassName("switch_btn")[0].innerText = '切换至微博热搜'
     } else if (btn_text === '切换至微博热搜') {
         NProgress.start();

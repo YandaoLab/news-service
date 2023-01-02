@@ -27,6 +27,10 @@
             "dest": "api/main.py"
         },
         {
+            "src": "/blog",
+            "dest": "api/main.py"
+        },
+        {
             "src": "/docs",
             "dest": "api/main.py"
         },
