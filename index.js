@@ -8,6 +8,8 @@ let BINGAPI = "https://news.ydlk.cc/bing"
 let WEIBOAPI = "https://news.ydlk.cc/weibo"
 //B站热搜API
 let BILIAPI = "https://news.ydlk.cc/bili"
+//半月谈API
+let BANYUEAPI = "https://news.ydlk.cc/banyue"
 
 //js入口
 get_day_news(offset);
@@ -195,6 +197,36 @@ function change_origin() {
                 console.log(error);
             });
         document.getElementById("news_title").innerText = 'B站热搜'
+        document.getElementsByClassName("before_btn")[0].style.display = "none";
+        document.getElementsByClassName("after_btn")[0].style.display = "none";
+        document.getElementsByClassName("switch_btn")[0].innerText = '切换至半月谈'
+    } else if (btn_text === '切换至半月谈') {
+        axios.get(BANYUEAPI)
+            .then(function (response) {
+                var data = response.data
+                var news_data = {}
+                var news_title = []
+                var news_url = []
+                for (let i = 0; i < data['data'].length; i++) {
+                    news_title.push(data['data'][i].title)
+                    news_url.push(data['data'][i].url)
+                }
+                news_data['news'] = news_title
+                news_data['urls'] = news_url
+                news_data['time'] = current_time
+                news_data['topic'] = '半月谈订阅'
+                news_data['weiyu'] = ''
+                data['data'] = news_data
+                load_day_news(data)
+            })
+            .catch(function (error) {
+                Notiflix.Notify.failure(`半月谈RSS获取失败\uD83D\uDE1E，请点击跳转至问题反馈`, function () {
+                    window.open("https://github.com/flow2000/news/issues/new")
+                });
+                NProgress.done()
+                console.log(error);
+            });
+        document.getElementById("news_title").innerText = '半月谈'
         document.getElementsByClassName("before_btn")[0].style.display = "none";
         document.getElementsByClassName("after_btn")[0].style.display = "none";
         document.getElementsByClassName("switch_btn")[0].innerText = '切换至每日早报'
