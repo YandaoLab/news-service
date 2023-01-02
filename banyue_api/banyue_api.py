@@ -1,7 +1,7 @@
 import requests
 import json
 import time
-API='https://www.toptal.com/developers/feed2json/convert?url=https%3A%2F%2Fapi.feeddd.org%2Ffeeds%2F613381f81269c358aa0ea8c1&minify=on'
+API='https://www.toptal.com/developers/feed2json/convert?url=https%3A%2F%2Fapi.feeddd.org%2Ffeeds%2F613381f81269c358aa0ea8c1'
 headers={
     'Access-Control-Allow-Origin':'*',
     'Access-Control-Allow-Headers':'Content-Type',
@@ -14,7 +14,7 @@ def get_topic():
         dataList=[]
         data=requests.get(API,headers=headers,timeout=100)
         data=json.loads(data.text)
-        data_json=data['data']['list']
+        data_json=data['items']#['list']
         for i in range(0,len(data_json)):
             dic = {
                 'title': data_json[i].get('title',''),
